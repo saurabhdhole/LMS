@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Leave Management System Portal</title>
+   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    -->
+</head>
+
+<body class="bodyDiv">
+
+  <!-- Navigation -->
+
+<br>
+<br>
+<br>
+
+<navx id="slide-menu" class="bodyx"><p></p>
+<!--  <p class="dashcontrol"><b>Mission</b> Control</p>-->
+<div style="position: relative; margin-left: 13%; margin-top: 18%;">
+<img src="src/images/logox.png" width="200px" class="menuimage">
+</div>
+
+ <div class="container menubutton" style="position: relative; margin-left: 12%; margin-top: -74%;">
+                                               
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> &nbsp;D S P&nbsp;
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <!--  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Preferences</a></li>
+          <li role="presentation" class="divider"></li>-->
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+	<ul class="menutop">
+
+		<li class="" ng-click="showEmpFun()"><span class="glyphicon glyphicon-user"></span> &nbsp;Employee</li>
+		<li class="" ng-show="empFun" ng-click="showAddEmp()"><span class="glyphicon glyphicon-minus">&nbsp;Add Employee</li>
+		<li class="" ng-show="empFun" ng-click="showDelEmp()"><span class="glyphicon glyphicon-minus">&nbsp;Delete Employee</li>
+		
+		<li class="" ng-click="showHolidayFun()"><span class="glyphicon glyphicon-asterisk">&nbsp;Holiday</li>
+		<li class="" ng-show="holidayFun" ng-click="showAddHoliday()"><span class="glyphicon glyphicon-minus">&nbsp;View/Add Holiday</li>
+		<li class="" ng-show="holidayFun" ng-click="showDelHoliday()"><span class="glyphicon glyphicon-minus">&nbsp;Delete Holiday</li>
+		
+		<li class="" ng-click="showWeekAttend()" ><span class="glyphicon glyphicon-pencil">&nbsp;Attendance</li>
+		
+		<li class="" ng-click="showReportFun()" ><span class="glyphicon glyphicon-th-list">&nbsp;Report</li>
+	<!-- 	<li class="events" ng-show="reportFun">Generate By Employee</li>-->
+		<li class="" ng-show="reportFun" ng-click="showReport()"><span class="glyphicon glyphicon-minus">&nbsp;Generate By Month</li>
+	</ul>
+</navx>
+<!-- Content panel -->
+	
+<div class="bodyDiv" ui-view></div>
+
+
+    <script type="text/javascript" src="../src/js/index.js"></script>
+</body>
+<script>	
+	function tick2(){
+		$('#ticker_02 li:first').slideUp( function () { $(this).appendTo($('#ticker_02')).slideDown(); });
+	}
+	setInterval(function(){ tick2 () }, 3000);
+
+</script>
+</html>

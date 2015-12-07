@@ -1,0 +1,177 @@
+<script type="text/javascript" src="lib_components/select2/dist/js/select2.full.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $(".js-example-basic-single").select2();
+	});	
+</script>
+
+<form >
+<br>
+<br>
+
+<!-- Dynamic Drop down for the employee -->
+<div ng-init="fetchEmpRecords()">
+	
+<div class="row" style="position:relative; margin-left:25%;">
+  	<span class="col-sm-2" style="position:relative; font-weight: bold;">Select Employee :</span>
+  	<div class="col-md-3">
+  	<select class="js-example-basic-single fixselect" ng-model="selectedId" name="" ng-change="showAttendancePanel()"
+  		ng-options="e.empid+ ' - '+e.empname for e in emprc track by e.empid"
+  	 required>
+  	 
+<!--    	<option  ng-repeat="e in emprc" value="e.empid">{{e.empid}}-{{e.empname}}</option>   	
+	 --></select>
+	</div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+<div class="headframe1" style="position: relative; left: 28%;" ng-init="weekMonthsshow()">
+<table style="position: relative; min-width: 150px;">
+<tr ><td ng-click="fstweek(w1start,w1stop)">&nbsp;&nbsp;&nbsp;{{w1start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w1stop}}&nbsp;{{mname}}</td></tr>
+<tr><td ng-click="fstweek(w2start,w2stop)">&nbsp;&nbsp;&nbsp;{{w2start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w2stop}}&nbsp;{{mname}}</td></tr>
+<tr><td ng-click="fstweek(w3start,w3stop)">&nbsp;&nbsp;&nbsp;{{w3start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w3stop}}&nbsp;{{mname}}</td></tr>
+<tr><td ng-click="fstweek(w4start,w4stop)">&nbsp;&nbsp;&nbsp;{{w4start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w4stop}}&nbsp;{{mname}}</td></tr>
+<tr><td ng-click="fstweek(w5start,w5stop)">&nbsp;&nbsp;&nbsp;{{w5start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w5stop}}&nbsp;{{mname}}</td></tr>
+<tr><td ng-show="week6" ng-click="fstweek(w6start,w6stop)">&nbsp;&nbsp;&nbsp;{{w6start}}&nbsp;{{mname}}&nbsp;&nbsp;-&nbsp;{{w6stop}}&nbsp;{{mname}}</td></tr>
+</table>
+</div>
+
+
+
+
+<div class="" style="position: relative; left: 27%; margin-top:4%; " ng-init="checkDates()" ng-show="showWeekA">
+<div class="col-sm-1" ng-show="sunday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day1}}</p>
+  	<select name="sunday" ng-model="sunday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="monday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day2}}</p>
+  	<select name="monday" ng-model="monday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="tuesday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day3}}</p>
+  	<select name="tuesday" ng-model="tuesday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="wednesday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day4}}</p>
+  	<select name="wednesday" ng-model="wednesday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="thursday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day5}}</p>
+  	<select name="thursday" ng-model="thursday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="friday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day6}}</p>
+  	<select name="friday" ng-model="friday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+<div class="col-sm-1" style="margin-left:%;" ng-show="saturday">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{day7}}</p>
+  	<select name="saturday" ng-model="saturday1" class="form-control text-control" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	<option value="P">Present</option>
+   	<option value="A">Absent</option>
+   	<option value="W/O">Week Off</option>
+   	<option value="CL">Causal Leave</option>
+   	<option value="SL">Sick Leave</option>
+   	<option value="EL">Earned Leave</option>
+   	<option value="ML">Maternity Leave</option>
+   	<option value="CPL">Compassionate Leave</option>
+   	<option value="MML">Marriage Leave</option>
+   	<option value="OD">Out Duty</option>
+   	<option value="OTA">Bussiness Travel</option>   	
+	</select>
+</div>
+
+
+</div>
+<div class="col-sm-4" style="position: relative; margin-top:2%; margin-left: 27%;" ng-show="showWeekA">						
+		<input type="button" class="btn btn-success" value="Submit" ng-click="addAttendanceEmp()" ng-disabled="">
+</div>
+
+</div>
+
+</form>

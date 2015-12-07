@@ -1,0 +1,65 @@
+     <script type="text/javascript" src="lib_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+ 
+  <script type="text/javascript">
+var today = new Date();
+
+//var currentmonth today.getMonth();
+//var currentDate=today.getDate();
+//var currentyear=today.getFullYear();
+
+$('#datetimepicker1').datetimepicker({
+});
+ </script>
+ 
+ 
+ 
+ 
+ <!-- Navigation -->
+<div id="content" ng-init="fetchHolidays()">
+<div style="position: relative;top: -10%;">
+<h2> Add Holiday Details</h2>
+
+<div class="headframe">
+</br>
+<table class="headtable1" style="position: relative;" >
+<tr class="">
+<td style="font-weight: bold;">Date :</td>
+<td><div class="input-group date col-md-10" id="datetimepicker1">
+      <input type="text" class="form-control" ng-model="reportParam.startdate" ng-blur="updateDate()" id="startdate" name="startdate" ng-required="showStartDate"/>
+      <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>      
+</div>     
+
+</td>
+</tr>
+<tr class="">
+<td style="font-weight: bold;">Description:</td>
+<td><input class="form-control" id="focusedInput" type="text" ng-model="desc"></input>
+</td>
+</tr>
+<tr class="">
+<td></td>
+<td><button type="submit" class="btn btn-primary txnbut" ng-click="addHoliday()">Add Holiday</button></td>
+</tr>
+
+
+</table>
+</br>
+</div>
+</div>
+
+<h3><p>Holiday Records</p></h3>
+
+<div class="headframe" >	
+<table class="headtable"> 		
+	
+	<tr ng-repeat="h in holidays">
+	<td >{{h.id}}</td>
+	<td >{{h.date | date:'dd/MM/yyyy'}}</td>
+	<td >{{h.description}}</td>
+	</tr>	
+	
+</table>
+</div>
+<br /><br />
+
+</div>

@@ -1,0 +1,228 @@
+<div style="position: relative;margin-left: 30%;">
+<wizard on-finish="finishedWizard()" > 
+    <wz-step title="Starting">
+     
+     <!--   Content  Templated  -->
+	<form name="reg_form" class="form-horizontal container-fluid" role="form">
+	<div class="container">	
+	<h3 style="text-shadow:0px 0px green;position: relative;left: %; top: 5%;">Employee Registration</h3>
+	<div class="" style="position: relative; left:%; top: 10%;">	
+   	<div class=""> 
+  	
+  	<table>
+  	
+  	<tr>
+  	<td ><label >Employee Id :</label></td>
+	<td >
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" id="empid"
+    	 name="txtname" ng-model="Cempid" placeholder="Employee Id" ng-minlength="1" maxlength="5" pattern="[0-9]*" required>
+    </div>
+	</td>
+	</tr>
+
+	</br>  
+	<tr>
+	<td ><label >Employee Name :</label></td>
+	<td >
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" id="txtname1"
+    	 name="txtname1" ng-model="Cempname" placeholder="Enter Your Name" ng-minlength="3" maxlength="20" ng-pattern="/^[a-zA-Z_\s&.-]*$/" required>
+   	</div>
+   	</td>
+	</tr>
+	
+	</br>
+	
+	<tr>
+	<td><label >Mobile No :</label></td>
+	<td>
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" id="txtname"
+    	 name="txtname" ng-model="mobile" placeholder="Mobile number" ng-minlength="10" maxlength="10" pattern="[7-9][0-9]{9}" required>
+    </div>
+   	</td>
+	</tr>
+	
+	<tr>
+	<td ><label >Email :</label></td>
+	<td >
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" placeholder="Please Enter Email" ng-model="email" id="textmail" name="txtemail" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+	</div>
+   	</td>
+	</tr>
+
+	<tr>
+	<td><label >Location :</label></td>
+	<td>
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" placeholder="Please Enter Job Location" ng-model="location" id="textmail" name="txtlocation" ng-pattern="" required>
+	</div>
+   	</td>
+	</tr>
+	
+	<tr>
+	<td><label >Department :</label></td>
+	<td>
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" placeholder="Please Enter Department" ng-model="department" id="textdepartment" name="txtdepartment" ng-pattern="" required>
+	</div>
+   	</td>
+	</tr>
+	
+	<tr>
+	<td><label >Blood Group :</label></td>
+	<td>
+	<div class="form-group required" show-errors>
+	<input type="text" class="form-control text-control" placeholder="Please Enter Blood Groop" ng-model="bgp" id="textbgp" name="txtbgp" ng-pattern="" required>
+	</div>
+   	</td>
+	</tr>	
+   
+  	</table>
+  	<div >
+  		<label class="col-sm-7">Gender</label>
+  		<div class="col-sm-7">
+		<input type="radio" name="sex" value="male" ng-model="gender" checked> Male  
+		<input type="radio" name="sex" value="female" ng-model="gender"> Female	
+  		</div>
+  	</div>	
+  	</div>
+   	        
+  			
+<br>	
+</div>		
+</div>
+
+</form>	    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+        <input type="submit" wz-next value="Continue" ng-click="submitdesc(empid,empname)"/>
+    </wz-step>
+    <wz-step title="Continuing" edit-mode=true>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Content  Templated  -->
+	<form name="reg_form" class="form-horizontal container-fluid" role="form">
+	<div class="container">	
+	<h3 style="text-shadow:0px 0px green;position: relative;left: %; top: 5%;">Employee Registration</h3>
+	<div class="" style="position: relative; left:%; top: %;">	
+   	<div class=""> 
+  	
+  	<table>
+  	
+  	<tr>
+  	<td ><label >Employee Id :  {{empid}}</label></td>
+	<td >
+	</td>
+	</tr>
+
+	</br>  
+	<tr>
+	<td ><label >Employee Name : {{empname}}</label></td>
+	
+	</tr>
+	
+	</br>
+	
+	<tr>
+	<td><label >Mobile No : {{mobile}}</label></td>
+
+	</tr>
+	
+	<tr>
+	<td ><label >Email : {{email}}</label></td>
+	<td >
+	</td>
+	</tr>
+
+	<tr>
+	<td><label >Location :</label></td>
+	<td>
+	</td>
+	</tr>
+	
+	<tr>
+	<td><label >Department :</label></td>
+	<td>
+	</td>
+	</tr>
+	
+	<tr>
+	<td><label >Blood Group :</label></td>
+	<td>
+	</td>
+	</tr>	
+   
+  	</table>
+  	</div>
+   	        
+  			
+<br>	
+		
+</div>		
+</div>
+
+</form>	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <input type="submit" wz-next value="Go on" ng-click="addEmp()" />
+    </wz-step>
+    <wz-step title="More steps">
+        <p>Even more steps!!</p>
+        <input type="submit" wz-next value="Finish now" />
+    </wz-step>
+</wizard>
+</div>

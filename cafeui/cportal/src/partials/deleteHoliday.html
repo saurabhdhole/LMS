@@ -1,0 +1,28 @@
+<!--   Content  Templated  -->
+<form name="reg_form" class="form-horizontal container-fluid" role="form">
+	<div class="container">	
+	<h3 style="text-shadow:0px 0px green;position: relative;left: 30%; top: 5%;">Delete Holiday </h3>
+	<div class="col-sm-4" style="position: relative; left: 30%; top: 10%;">	
+	</br>
+	</br>
+   <div class="fieldwid">
+   
+  	<div class="form-group required" show-errors>
+  	<table>
+  	
+  	<tr>
+  	<td ><label >Holiday Id :</label></td>
+	<td><input type="text" class="form-control text-control" id="hlid"
+    	 name="txtname" ng-model="hlid" placeholder="Holiday Id" ng-minlength="1" maxlength="5" pattern="[0-9]*" required>
+	</td>
+	</tr>   
+  	</table>
+  	</div>  	
+ </div>        				
+		<div class="col-sm-4" style="position:relative;left: 18%;" >						
+		<input type="button" class="btn btn-success" value="Delete Holiday" ng-click="deleteHoliday()" ng-disabled="">
+		</div>
+</div>		
+</div>
+
+</form>	

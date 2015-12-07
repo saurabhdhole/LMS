@@ -1,0 +1,62 @@
+
+<br />
+<br />
+<br /><br />
+
+<!--  Header  -->
+<div>
+	<form>
+		<span class="portalHeader">LMS HR
+			Portal</span>
+	</form>
+</div>
+<!--   Content  Templated  -->
+<div id="floating">
+	<div id="logo">
+		<img src="src/images/logox.png" class="logo" height="120" style="position: relative; top: -15px;"/>
+	</div>
+	
+	<form ng-init="checkSession()" >
+		<!-- <img src="src/images/logo1.png" class="logo" height="120" style="position: relative; top: 150px; left: 50px;"/> -->
+		<br /> <br />
+		
+		<p class="contentTitle">Login</p>
+		
+		
+		<table class="loginTable">
+			<tr class="InputTableRow">
+				<td class="InputTableLabel"><label class="l_label">User Id</label></td>
+				<td><input placeholder="User Id" type="text" class="inputx" ng-model="username"></td>
+			</tr>
+			<tr>
+				<td class="InputTableLabel"><label class="l_label">Password</label></td>
+				<td><input type="password" placeholder="Password"
+					class="inputx" ng-model="password"></td>
+			</tr>
+		</table>
+	<!-- 	<center><font color="red" id="loginResponseMsg">{{loginResponseMsg}}</font></center> -->
+		<br />
+		
+		<div style="position: relative;margin-left: -8%;">
+			<table class="loginButtonLayout">
+				<tr>
+					<td><input type=submit id="login" name="loginButton" class="btn btn-primary buttonpadding"
+						value="Sign In" ng-click="login()" /></td>
+
+				</tr>
+			</table>
+			
+			<br />
+			<br />
+		</div>
+		
+	</form>
+	
+</div>
+
+<!--   Footer  -->
+<div align=center>
+	<p>&copy; 2015 Oberthur Technologies</p>
+	<p>Copyright 2015 LMS.</p>
+</div>
+

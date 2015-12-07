@@ -1,0 +1,33 @@
+
+ 
+<script type="text/javascript">
+var today = new Date();
+
+$('#datetimepicker1').datetimepicker({
+	viewMode: 'years',
+    format: 'MM/YYYY'
+});
+ </script>
+ 
+ 
+ 
+ 
+ <!-- Navigation -->
+<div class="container" style="position: relative; margin-left: 32%; margin-top: 8%;">
+<h4> Select Month to generate CSV</h4>
+
+<div class="row">
+
+<span class="col-sm-1" style="font-weight: bold;">Date :</span>
+<div class="input-group date col-sm-2" id="datetimepicker1">
+      <input type="text" class="form-control" ng-model="reportParam.startdate" ng-blur="updateDate()" id="startdate" name="startdate" ng-required="showStartDate"/>
+      <span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>      
+</div>     
+<div style="position: relative;margin-left: 25%; margin-top: -3%">
+<button type="submit" class="btn btn-primary txnbut" ng-click="genrateByMonth()">Submit</button>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+</div>
+</div>
